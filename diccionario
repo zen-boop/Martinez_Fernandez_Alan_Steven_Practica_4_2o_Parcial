@@ -1,0 +1,14 @@
+di={}#crea la lista
+e=input("Introduce las palabras en español e inglés (ejemplo: hola:hello, adiós:goodbye): ")#da una instrucciom y hace posible colocar
+p=e.split(', ')#p=e en split
+for par in p:#for "par" en "p" se repetira
+    e,i =par.split(':')#"e" y "i" es igual a par.split(":") 
+    di[e.strip()]=i.strip()#e esta ademtro de di y es igual a i strip
+print("Diccionario de traducción:")#coloca una instruccion
+print(di)#coloca el diccionario
+f=input("Introduce una frase en español para traducir: ")#hace que coloque la frace
+t=[]#crea una lista
+for p in f.split():#mientras p este en f
+    t.append(di.get(p, p))  # Traduce o deja la palabra sin traducir
+print("Traducción al inglés:")#coloca una instruccion
+print(' '.join(t))#imprime con la traduccion
